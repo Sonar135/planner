@@ -1,0 +1,209 @@
+.img_container{
+    width:100%;
+    height:967px;
+    position:relative;
+    background: url('../images/4432a589-a1e9-499c-b8c4-3b91cecc86b0.png') right;
+    background-size: cover;
+}
+
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.519);
+}
+
+
+.img_container img{
+    width:1903px;
+    height: 967px;
+}
+
+
+.container{
+    width:100%;
+    height:700px;
+}
+
+.cent{
+    width:1200px;
+    height:100%;
+    margin:0 auto;
+    padding-top:1px;
+}
+
+.we_container{
+    width:1000px;
+    height:250px;
+    float:bottom;
+    margin-top:400px;
+    padding:16px;
+}
+
+.we_container h1{
+    text-align: left;
+    width:700px;
+    color:white;
+    font-size:42px;
+    font-weight:900;
+}
+
+.we_container p{
+    width:800px;
+    text-align: left;
+    color:rgb(212, 208, 208);
+    margin:10px 0;
+    line-height: 26px;
+}
+
+.we_container button{
+    margin:18px 0;
+    padding:16px 20px;
+    background: #f76418;
+    color:white;
+    text-transform: uppercase;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.we_container button:hover{
+    background: #ce5316;
+}
+
+
+.sec1{
+    margin-top:100px;
+}
+
+.sec1 h1{
+    text-align:center;
+}
+
+.sec1{
+    height:900px;
+    margin-top:100px;
+}
+
+
+
+
+
+
+
+
+h1{
+    font-size: 30px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  table{
+    width:100%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: var(--accent);
+    width:100%;
+   }
+  .tbl-content{
+    height:600px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color:white;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  td{
+    /* padding: 15px; */
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: black;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  
+  }
+  
+  td h3{
+    color:black;
+    text-align: center;
+    font-weight:600;
+    font-size:18px;
+  }
+
+  tr{
+    height:60px;
+  }
+  
+
+  section{
+    margin: 50px auto;
+    width:100%;
+    animation: fade_in 1s;
+  }
+  
+  
+  /* follow me template */
+
+  
+  /* for custom scrollbar for webkit browser*/
+  
+  ::-webkit-scrollbar {
+      width: 6px;
+  } 
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  } 
+  ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  }
+
+
+.img_con{
+    width:100px;
+    height:100px;
+    border-radius: 100px;
+    margin:8px auto;
+    overflow:hidden;
+}
+
+  .img_con img{
+    width:auto;
+    height:100%;
+    width:100%;
+    object-fit:cover;
+  }
+
+
+
+  .tb_ico{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    background: var(--accent);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    margin:20px 41%;
+  }
+
+  .tb_ico i{
+    font-size:18px;
+    color:white;
+  }
+
+
