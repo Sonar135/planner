@@ -1,4 +1,22 @@
+<?php
+  ob_start();
+  session_start();
+  include 'connect.php';
+  if(isset($_SESSION["id"])){
+    $user_type=$_SESSION['user_type'];
+    $email=$_SESSION['email'];
+    $user_phone=$_SESSION['phone'];
+    $user_name=$_SESSION['name'];
+  }
+?>
 
+        <?php
+            if(isset($_SESSION["id"])){
+                if($user_type==''){
+                  
+                }
+            }
+            ?>
 
 
 
@@ -37,11 +55,27 @@
                   
                   
                     
-                      
+                  <?php
+            if(isset($_SESSION["id"])){
+                if($user_type=='planner'){
+                  echo '  <li>
+                  <a href="plan.php">Plan Event</a>
+                </li>
 
-                      <li>
-                        <a href="plan.php">Plan Event</a>
-                      </li>
+                <li>
+                <a href="chat.php">chat</a>
+              </li>
+              
+              ';
+                }
+
+             
+            }
+
+
+         
+            ?>
+
                     
 
 
@@ -49,39 +83,35 @@
 
 
                       <li>
-                      <a href="supervisors.php">calendar</a>
+                      <a href="calendar.php">calendar</a>
                     </li>
 
 
-                      <li>
-                        <a href="students.php">chat</a>
-                      </li>
-                      
-                      
-            
                   
-
-
+                    
+               
                  
-                   
-                    <li>
-                     <a href="document.php"> Adnin</a>
-                    </li>
-                 
+
+                    <?php
+            if(isset($_SESSION["id"])){
+                if($user_type==''){
+                  
+                }
+                echo '  <a href="logout.php">Logout</a>';
+
+            }
+
+            else{
+              echo '     <a href="reg.php">register</a>';
+            }
+            ?>
 
    
-                  
-                    <li>
-               
-                     
                       
-                        
-
-                        
-                            <a href="register.php">register</a>
-                    
-                     
+<li>
+                     <a href="contact_admin.php"> Contact</a>
                     </li>
+          
                 </ul>
             </div>
         </div>

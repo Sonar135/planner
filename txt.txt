@@ -1,0 +1,85 @@
+  <div class="container auth">
+            <div class="cent signup">
+                <div class="left" id="coor">
+                    <div class="overlay">
+
+                    </div>
+                </div>
+
+           <form action="" method="post">  <div class="right">
+                    <h1>SIGN UP</h1>
+
+                    <div class="n_e">
+                        <input type="text" placeholder="full name (surname first)" name="name">
+                        <input type="email" placeholder="Email" name="email">
+                    </div>
+
+                    <div class="n_e">
+                        <input type="text" placeholder="Phone no" name="phone" id="sup_phone">
+                    </div>
+
+                  
+
+                    <div class="n_e">
+                        <input type="password" placeholder="password" name="password">
+                        <input type="password" placeholder="confirm password" name="conpass">
+                    </div>
+
+                    <button name="signup">sign up</button>
+                    <h4 class="has_acc">I have an account</h4>
+                </div></form>  
+            </div>
+
+
+
+            <div class="cent login">
+                <div class="left stud" id="coor">
+                    <div class="overlay">
+
+                    </div>
+                </div>
+
+           <form action="" method="post">   <div class="right">
+                    <h1>LOGIN</h1>
+
+                  
+
+                    <div class="ne_log">
+                        <input type="email" placeholder="email" name="email">
+                    </div>
+
+                    <div class="ne_log">
+                        <input type="password" placeholder="password" name="password">
+                    </div>
+
+                    <button name="login">Login</button>
+
+                    <!-- <h4 class="no_acc">I dont have an account</h4> -->
+                </div></form>  
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        create table planners(
+	id int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    phone varchar(255),
+    user_type varchar(255)
+)
