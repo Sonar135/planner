@@ -216,15 +216,15 @@
 
 
 
-    function sup_email_exists($conn, $email){
+    function admin_email_exists($conn, $email){
         $result;
     
-        $query="SELECT * FROM supervisors WHERE email=?";
+        $query="SELECT * FROM admin WHERE email=?";
     
         $stmt=mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $query)){
-            header("location: user_auth.php?error=stmtfailed");
+            header("location: admin_auth.php?error=stmtfailed");
             exit();
         }
     
@@ -246,31 +246,31 @@
     }
 
 
-    function create_super($conn, $email, $fname,  $phone, $password, $confirm , $prefix){
-        $user_type="supervisor";
+    function create_admin($conn, $email, $fname,  $phone, $password, $confirm ){
+        $user_type="admin";
   
-        $insert= "INSERT INTO supervisors (name,  phone, email, prefix,  password, user_type) VALUES (?,?,?,?,?,?)";
+        $insert= "INSERT INTO admin (name,  phone, email,  password, user_type) VALUES (?,?,?,?,?)";
 
         $stmt2=mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt2, $insert)){
-            header("location: user_auth.php?error=stmtfailed");
+            header("location: admin_auth.php?error=stmtfailed");
             exit();
         }
     
         
         $hashed_pwd=password_hash($password, PASSWORD_DEFAULT);
 
-        mysqli_stmt_bind_param($stmt2, 'ssssss', $fname, $phone,  $email, $prefix, $hashed_pwd, $user_type);
+        mysqli_stmt_bind_param($stmt2, 'sssss', $fname, $phone,  $email, $hashed_pwd, $user_type);
         mysqli_stmt_execute($stmt2);
         mysqli_stmt_close($stmt2);
         
-        header("location: user_auth.php?error=success");
+        header("location: admin_auth.php?error=success");
         exit();
     }
 
 
-    function empty_sup_signup($email, $fname, $phone, $password, $confirm ){
+    function empty_admin_signup($email, $fname, $phone, $password, $confirm ){
         $result;
         if($email=="" or $fname=="" or  $phone=="" or $password=="" or $confirm=="" ){
             $result= true;
