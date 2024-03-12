@@ -90,7 +90,7 @@
 
                  
                
-                        <textarea name="message" id="" cols="30" rows="10" placeholder=" description"></textarea>
+                        <textarea name="message" id="" cols="30" rows="10" placeholder=" message"></textarea>
                  
 
                     <button name="submit">submit</button>

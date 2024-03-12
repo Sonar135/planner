@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/header.css?v=<?php echo time();?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siwes</title>
+    <title>Planr</title>
 </head>
 <body>
 

@@ -287,7 +287,7 @@ h1{
     color:white;
     text-align: center;
     margin:20px 0;
-    animation: fade_in 1s;
+    animation: fade_in 2.8s;
     font-size:30px;
     font-weight:600;
   }

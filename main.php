@@ -17,9 +17,10 @@ $output="";
     $name=$row["name"];
     $date=$row["date"];
     $venue=$row["venue"];
-    $start_time=$row["start_time"];
-    $end_time=$row["end_time"];
+    $start_time= substr($row["start_time"], 0, 5);
+    $end_time= substr($row["end_time"], 0, 5);
     $planner=$row["planner"];
+    $id=$row["id"];
    
 
 
@@ -30,6 +31,7 @@ $output="";
     <td><h3>'.$date.'</h3></td>
     <td><h3>'.$start_time.' - '.$end_time.'</h3></td>
     <td><h3>'.$venue.'</h3></td>
+    <td id="ico"><a href="event.php?event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-eye"></i></div></a></td>
 
   
   </tr>';
@@ -84,6 +86,7 @@ $output="";
           <th>Date</th>
           <th>Time</th>
           <th>Venue</th>
+          <th>See Event</th>
         </tr>
       </thead>
     </table>

@@ -133,6 +133,7 @@ button{
     display:none;
     animation: fade_in_abs3 .3s;
     cursor:default;
+    overflow-y: scroll;
 }
 
 

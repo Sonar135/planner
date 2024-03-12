@@ -20,8 +20,8 @@ $output="";
     $name=$row["name"];
     $date=$row["date"];
     $venue=$row["venue"];
-    $start_time=$row["start_time"];
-    $end_time=$row["end_time"];
+    $start_time= substr($row["start_time"], 0, 5);
+    $end_time= substr($row["end_time"], 0, 5);
     $planner=$row["planner"];
     $id=$row["id"];
 
