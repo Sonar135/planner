@@ -146,6 +146,22 @@ table{
   min-height:300px;
 }
 
+/* .tb_ico{
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  background: var(--accent);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+  margin:20px 41%;
+}
+
+.tb_ico i{
+  font-size:18px;
+  color:white;
+} */
 
 .message_cont{
   margin:20px auto;

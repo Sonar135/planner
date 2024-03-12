@@ -33,6 +33,40 @@
             }
         }
     }
+
+
+
+
+
+
+
+    $reply='';
+
+    $get=mysqli_query($conn, "SELECT * from admin_contact where reply!='' and sender='$email'");
+
+    if(mysqli_num_rows($get)<1){
+        $reply='<h1>no replies from admin</h1>';
+
+        
+    }
+
+    while($row=mysqli_fetch_assoc($get)){
+        $re=$row["message"];
+        $admin_reply=$row["reply"];
+
+        $reply.='     <div class="rep_cont">
+        <div class="re">
+            <h4>Re:'.$re.'</h4>
+        </div>
+
+        <div class="reply">
+            <h4>Admin:</h4>
+            <div class="ad_rep">
+          '.$admin_reply.'
+            </div>
+        </div>
+    </div>';
+    }
 ?>
 
 
@@ -100,6 +134,14 @@
 
 
   
+        </div>
+
+
+        <div class="container sec1">
+        <h1>admin replies</h1>
+            <div class="cent">
+           <?php echo $reply?>
+            </div>
         </div>
        <?php 
         include "footer.php";
