@@ -73,7 +73,7 @@
 
                     <div class="n_e">
                         <input type="text" placeholder="Full Name" name="name" value="<?php echo $user_name?>">
-                        <input type="email"  name="email" value="<?php echo $email?>" >
+                        <input type="email"  name="email" value="<?php echo $email?>" placeholder="email">
 
                     </div>
 

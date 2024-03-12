@@ -3,110 +3,43 @@
 ?>
 
 <?php
-
 $output="";
+  $get=mysqli_query($conn, "SELECT * from admin_contact where reply=''");
+
+  if(mysqli_num_rows($get)<1){
+    $output= '<h1>no messages at the moment</h1>';
+  }
 
 
-$get=mysqli_query($conn, "SELECT * FROM events ");
+  while($row=mysqli_fetch_assoc($get)){
+    $sender_email=$row["sender"];
+    $message=$row["message"];
 
-if(mysqli_num_rows($get)<1){
-  $output='<h1>You Have No Planned Events</h1>';
-}
-
-while($row=mysqli_fetch_assoc($get)){
-  $name=$row["name"];
-  $date=$row["date"];
-  $venue=$row["venue"];
-  $start_time=$row["start_time"];
-  $end_time=$row["end_time"];
-  $planner=$row["planner"];
-  $id=$row["id"];
+    // $get_name=mysqli_query($conn, "SELECT * from planners where email='$sender_email'");
+    // $sender=mysqli_fetch_assoc($get_name)["name"];
 
 
-  $output.='    <tr>
+    $output.='    <div class="message_cont">
+    <div class="profile_cont">
+        <div class="profile">
+        <i class="fa-solid fa-user"></i>
+        </div>
+        <h4>'.$sender_email.'</h4>
+        </div>
 
-  <td><h3>'.$name.'</h3> </td>
-  <td><h3>'.$date.'</h3></td>
-  <td><h3>'.$start_time.' - '.$end_time.'</h3></td>
-  <td><h3>'.$venue.'</h3></td>
-  <td><a href="delete.php?event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></td></a>
+        <div class="ad_messages">
+      '.$message.'
+        </div>
+<form action="">
+        <textarea name="" id="" cols="30" rows="10" placeholder="reply"></textarea>
 
-</tr>';
-}
-
-
+        <div class="buttons">
+          <button>reply</button>
+          <button>ignore</button>
+        </div></form>
+    </div>';
+  }
 ?>
-
-
-
-
-<?php
-
-$users="";
-
-
-$get_users=mysqli_query($conn, "SELECT * FROM users ");
-
-if(mysqli_num_rows($get_users)<1){
-  $users='<h1>No Users Registered</h1>';
-}
-
-while($row=mysqli_fetch_assoc($get_users)){
-  $name=$row["name"];
-  $phone=$row["phone"];
-  $email=$row["email"];
-
-  $id=$row["id"];
-
-
-  $users.='    <tr>
-
-  <td><h3>'.$name.'</h3> </td>
-  <td><h3>'.$phone.'</h3></td>
-  <td><h3>'.$email.'</h3></td>
-  <td><a href="delete.php?event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></td></a>
-
-</tr>';
-}
-
-
-?>
-
-
-
-
-<?php
-
-$planners="";
-
-
-$get_planners=mysqli_query($conn, "SELECT * FROM planners ");
-
-if(mysqli_num_rows($get_planners)<1){
-  $planners='<h1>No Users Registered</h1>';
-}
-
-while($row=mysqli_fetch_assoc($get_planners)){
-  $name=$row["name"];
-  $phone=$row["phone"];
-  $email=$row["email"];
-
-  $id=$row["id"];
-
-
-  $planners.='    <tr>
-
-  <td><h3>'.$name.'</h3> </td>
-  <td><h3>'.$phone.'</h3></td>
-  <td><h3>'.$email.'</h3></td>
-  <td><a href="delete.php?event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></td></a>
-
-</tr>';
-}
-
-
-?>
-
 
 
 
@@ -147,17 +80,9 @@ while($row=mysqli_fetch_assoc($get_planners)){
     <div class="container messages">
       <div class="cent">
     
-        <div class="message_cont">
-        <div class="profile_cont">
-            <div class="profile">
-              
-            </div>
-            </div>
-
-            <div class="ad_messages">
-
-            </div>
-        </div>
+   
+    <?php echo $output?>
+        
       </div>
     </div>
 
