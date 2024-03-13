@@ -119,10 +119,31 @@ class Calendar {
  
             $cellContent=null;
         }
-             
-         
-        return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
-                ($cellContent==null?'mask':'').'">'.$cellContent.'</li>';
+        include 'connect.php';
+            $blue='';
+            $disabled='';
+            $query=mysqli_query($conn, "SELECT * from events");
+
+           while($row=mysqli_fetch_assoc($query)) {
+            $event_date=$row["date"];
+
+            if($this->currentDate==$event_date){
+                $blue="blue";
+            }
+
+            if($this->currentDate!=$event_date){
+                $disabled="disabled";
+            }
+
+            return '<a href="calendar_oop.php?month=03&year=2024&date='.$this->currentDate.'" class=""><button '.$disabled.' id="li-'.$this->currentDate.' " class="'.$blue.''.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+            ($cellContent==null?'mask':'').'">'.$cellContent.'</button></a>';
+           }
+
+        
+            
+
+
+
     }
      
     /**
