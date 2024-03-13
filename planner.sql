@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2024 at 08:01 PM
+-- Generation Time: Mar 13, 2024 at 11:32 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,13 @@ CREATE TABLE `admin` (
   `user_type` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `password`, `phone`, `user_type`) VALUES
+(1, 'tayo', 'tayo@gmail.com', '$2y$10$q3gVjZMX7JiIch/KmvSWG.to78nZ3muS9qysKsN2KFm1PRKqFL8i2', '08109495127', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -46,7 +53,7 @@ CREATE TABLE `admin_contact` (
   `id` int(11) NOT NULL,
   `sender` varchar(255) DEFAULT NULL,
   `message` varchar(255) DEFAULT NULL,
-  `reply` varchar(255) DEFAULT NULL
+  `reply` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -54,7 +61,12 @@ CREATE TABLE `admin_contact` (
 --
 
 INSERT INTO `admin_contact` (`id`, `sender`, `message`, `reply`) VALUES
-(1, 'vefidi135@gmail.com', 'Hey there, I am an event', NULL);
+(1, 'vefidi135@gmail.com', 'Hey there, I am an event', 'ignored'),
+(2, 'vefidi135@gmail.com', 'lol\r\n', 'ignored'),
+(3, 'vefidi135@gmail.com', 'zaddy', 'ignored'),
+(4, 'vefidi135@gmail.com', 'harder daddy', 'ignored'),
+(5, 'vefidi135@gmail.com', 'yes daddy', 'yeah'),
+(6, 'vefidi135@gmail.com', 'Hey i am a message', '');
 
 -- --------------------------------------------------------
 
@@ -78,7 +90,8 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `name`, `venue`, `date`, `start_time`, `end_time`, `planner`, `Description`) VALUES
-(4, 'hackathon', 'CIT ', '2024-03-13', '11:55:00', '14:00:00', 'vefidi135@gmail.com', 'Hey there, I am an event');
+(4, 'hackathon', 'CIT ', '2024-03-13', '11:55:00', '14:00:00', 'vefidi135@gmail.com', 'Hey there, I am an event'),
+(5, 'Tech Explore', 'Amphitheatre ', '2024-03-26', '13:02:00', '17:02:00', 'vefidi135@gmail.com', 'Hey there, I am an event');
 
 -- --------------------------------------------------------
 
@@ -100,7 +113,7 @@ CREATE TABLE `planners` (
 --
 
 INSERT INTO `planners` (`id`, `name`, `email`, `password`, `phone`, `user_type`) VALUES
-(1, 'Victor Efidi okechukwu', 'vefidi135@gmail.com', '$2y$10$EC3.TrPek7cp/s7GEb5sJO2dS8/k8.NzfLWnytFOQ1.z47xdz8dFS', 'vefidi135@gmail.com', 'planner');
+(1, 'Victor Efidi okechukwu', 'vefidi135@gmail.com', '$2y$10$EC3.TrPek7cp/s7GEb5sJO2dS8/k8.NzfLWnytFOQ1.z47xdz8dFS', '08109495127', 'planner');
 
 -- --------------------------------------------------------
 
@@ -116,13 +129,6 @@ CREATE TABLE `users` (
   `password` varchar(255) DEFAULT NULL,
   `user_type` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password`, `user_type`) VALUES
-(1, 'Ernest', 'vefidi135@gmail.com', 'vefidi135@gmail.com', '$2y$10$Cd92QxO0gkfUdrEHMlE.me4ES6CkVZ33EATCNvFB7A2fPlMAaNks6', 'user');
 
 --
 -- Indexes for dumped tables
@@ -166,19 +172,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `admin_contact`
 --
 ALTER TABLE `admin_contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `planners`
