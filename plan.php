@@ -129,7 +129,7 @@ echo $num;
             <div class="container">
                 <div class="cent">
                 <div class="welcome_cont">
-                <h1>PLAN YOUR EVENT</h1>
+                <h1>Plan Your Event</h1>
                 <span></span>
                
             

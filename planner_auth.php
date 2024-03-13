@@ -180,7 +180,12 @@
         <div class="overlay">
             <div class="container">
                 <div class="cent">
-             
+                <div class="welcome_cont">
+                <h1>Planner</h1>
+                <span></span>
+               
+            
+             </div>
                 </div>
             </div>
         </div>
@@ -214,6 +219,8 @@
                         <input type="password" placeholder="password" name="password">
                         <input type="password" placeholder="confirm password" name="conpass">
                     </div>
+
+                    <h4>password must contain 1 uppercase and 1 special character(#%&!*)</h4>
 
                     <button name="signup">sign up</button>
                     <h4 class="has_acc">I have an account</h4>

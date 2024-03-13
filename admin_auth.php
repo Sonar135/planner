@@ -180,7 +180,12 @@
         <div class="overlay">
             <div class="container">
                 <div class="cent">
-             
+                <div class="welcome_cont">
+                <h1>Admin</h1>
+                <span></span>
+               
+            
+             </div>
                 </div>
             </div>
         </div>

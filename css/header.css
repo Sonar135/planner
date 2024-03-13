@@ -13,6 +13,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 :root{
     --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -137,7 +138,7 @@ button:disabled{
     list-style:none;
     accent-color: #25059b;
     text-decoration: none;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 
@@ -170,6 +171,15 @@ h3{
     height:100%;
     position:relative;
     margin-left:60px;
+  
+}
+
+.logo_cont h1{
+  font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 5px;
+    font-size:30px;
 }
 
 .logo_cont img{

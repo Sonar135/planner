@@ -22,7 +22,12 @@
         <div class="overlay">
             <div class="container">
                 <div class="cent">
+                <div class="welcome_cont">
+                <h1>Login/Register</h1>
+                <span></span>
                
+            
+             </div>
                 </div>
             </div>
         </div>

@@ -120,6 +120,27 @@ class Calendar {
             $cellContent=null;
         }
         include 'connect.php';
+
+        $cal_month='';
+        $cal_year='';
+
+        if(isset($_GET["month"])){
+            $cal_month=$_GET["month"];
+        }
+
+        if(isset($_GET["year"])){
+            $cal_year=$_GET["year"];
+        }
+
+
+        if(!isset($_GET["month"])){
+            $cal_month=$this->currentMonth;
+        }
+
+        if(!isset($_GET["year"])){
+            $cal_year=$this->currentYear;
+        }
+
             $blue='';
             $disabled='';
             $query=mysqli_query($conn, "SELECT * from events");
@@ -130,17 +151,23 @@ class Calendar {
             if($this->currentDate==$event_date){
                 $blue="blue";
             }
+    
+            
+        //    else if($this->currentDate!=$event_date){
+        //         $disabled="disabled";
+        //     }
 
-            if($this->currentDate!=$event_date){
-                $disabled="disabled";
-            }
+         
 
-            return '<a href="calendar_oop.php?month=03&year=2024&date='.$this->currentDate.'" class=""><button '.$disabled.' id="li-'.$this->currentDate.' " class="'.$blue.''.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
-            ($cellContent==null?'mask':'').'">'.$cellContent.'</button></a>';
            }
 
+           return '<a href="calendar_oop.php?month='.$cal_month.'&year='.$cal_year.'&date='.$this->currentDate.'#lock" class="" ><button '.$disabled.' id="li-'.$this->currentDate.' " class="'.$blue.''.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+           ($cellContent==null?'mask':'').'">'.$cellContent.'</button></a>';
+
+     
         
             
+          
 
 
 
