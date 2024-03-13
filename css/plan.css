@@ -1,5 +1,5 @@
 .auth{
-    height:500px;
+    height:590px;
   
 }
 
@@ -308,3 +308,15 @@ table{
   }
 
 
+.labels{
+    width:100%;
+    margin:0 0;
+    display:flex;
+    justify-content: space-between;
+    padding:0 16px;
+    height:20px;
+}
+
+.labels h4{
+    width:200px;
+}

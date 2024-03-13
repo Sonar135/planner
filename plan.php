@@ -128,7 +128,12 @@ echo $num;
         <div class="overlay">
             <div class="container">
                 <div class="cent">
+                <div class="welcome_cont">
+                <h1>PLAN YOUR EVENT</h1>
+                <span></span>
                
+            
+             </div>
                 </div>
             </div>
         </div>
@@ -150,7 +155,10 @@ echo $num;
                         <input type="text" placeholder="Event" name="name">
 
                     </div>
-
+                    <div class="labels">
+                    <h4></h4>
+                    <h4>date</h4>
+                   </div>
                     <div class="n_e">
 
                         <div class="select">
@@ -180,7 +188,10 @@ echo $num;
                         <input type="date"  name="date"  >
                     </div>
 
-                  
+                   <div class="labels">
+                    <h4>start time</h4>
+                    <h4>end time</h4>
+                   </div>
 
                     <div class="n_e">
                         <input type="time" placeholder="start_time" name="start">

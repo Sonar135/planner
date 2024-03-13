@@ -141,7 +141,7 @@
         exit();
     }
 
-    planner_login($conn, $email, $password);
+    admin_login($conn, $email, $password);
     }
 
 

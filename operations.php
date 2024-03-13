@@ -25,7 +25,7 @@ while($row=mysqli_fetch_assoc($get)){
   <td><h3>'.$date.'</h3></td>
   <td><h3>'.$start_time.' - '.$end_time.'</h3></td>
   <td><h3>'.$venue.'</h3></td>
-  <td><a href="delete.php?event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></td></a>
+  <td><a href="delete.php?admin&event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></td></a>
   <td><a href="event.php?event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-eye"></i></div></a></td> 
 </tr>';
 }
@@ -60,7 +60,7 @@ while($row=mysqli_fetch_assoc($get_users)){
   <td><h3>'.$name.'</h3> </td>
   <td><h3>'.$phone.'</h3></td>
   <td><h3>'.$email.'</h3></td>
-  <td><a href="delete.php?event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></td></a>
+  <td><a href="delete.php?user='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></td></a>
 
 </tr>';
 }
@@ -95,7 +95,7 @@ while($row=mysqli_fetch_assoc($get_planners)){
   <td><h3>'.$name.'</h3> </td>
   <td><h3>'.$phone.'</h3></td>
   <td><h3>'.$email.'</h3></td>
-  <td><a href="delete.php?event='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></a></td>
+  <td><a href="delete.php?planner='.$id.'" class=""><div class="tb_ico"><i class="fa-solid fa-trash"></i></div></a></td>
 </tr>';
 }
 

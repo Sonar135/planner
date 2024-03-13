@@ -111,11 +111,13 @@ $output="";
         </div>
     </div>
 
-    <div class="container sec2">
+    <!-- <div class="container sec2">
       <div class="cent">
         <h1>Yearly Events</h1>
+
+
       </div>
-    </div>
+    </div> -->
     <?php 
         include "footer.php";
     ?>

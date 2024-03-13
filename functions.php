@@ -284,11 +284,11 @@
 
 
 
-    function sup_login($conn, $email, $password){
-        $uidexist= sup_email_exists($conn, $email);
+    function admin_login($conn, $email, $password){
+        $uidexist= admin_email_exists($conn, $email);
 
         if($uidexist===false){
-            header("location: user_auth.php?error=wrongLogin");
+            header("location: admin_auth.php?error=wrongLogin");
             exit();
         }
 
@@ -296,7 +296,7 @@
         $checkedpwd=password_verify($password, $pwdHashed);
 
         if($checkedpwd===false){
-            header("location: user_auth.php?error=wrongLogin");
+            header("location: admin_auth.php?error=wrongLogin");
             exit();
         }
 
@@ -304,7 +304,7 @@
             session_start();
 
             $_SESSION["id"]=$uidexist["id"];
-            $_SESSION['siwesid']=$uidexist['siwesid'];
+            $_SESSION["name"]=$uidexist["name"];
             $_SESSION["email"]=$uidexist["email"];
             $_SESSION['phone']=$uidexist['phone'];
             $_SESSION['user_type']=$uidexist['user_type'];
@@ -313,7 +313,7 @@
    
          
 
-            header("location: main.php");
+            header("location: admin.php");
             exit();
         }
     }

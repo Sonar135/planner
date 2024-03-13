@@ -57,6 +57,8 @@
                     
                   <?php
             if(isset($_SESSION["id"])){
+
+
                 if($user_type=='planner'){
                   echo '  <li>
                   <a href="plan.php">Plan Event</a>
@@ -70,6 +72,20 @@
                 }
 
              
+
+             echo '   <li>
+             <a href="calendar_oop.php">calendar</a>
+           </li>
+           
+
+         
+           ';
+
+           if($user_type=='planner'){
+            echo '  <li>
+            <a href="contact_admin.php"> Contact</a>
+           </li>';
+          }
             }
 
 
@@ -82,9 +98,7 @@
                       
 
 
-                      <li>
-                      <a href="calendar.php">calendar</a>
-                    </li>
+                   
 
 
                   
@@ -94,23 +108,23 @@
 
                     <?php
             if(isset($_SESSION["id"])){
-                if($user_type==''){
-                  
+                if($user_type=='admin'){
+                  echo '    <li>
+                  <a href="admin.php">admin</a>
+                 </li>';
                 }
                 echo '  <a href="logout.php">Logout</a>';
 
             }
 
             else{
-              echo '     <a href="reg.php">register</a>';
+              echo '     <a href="reg.php">register/login</a>';
             }
             ?>
 
    
                       
-<li>
-                     <a href="contact_admin.php"> Contact</a>
-                    </li>
+
           
                 </ul>
             </div>

@@ -3,6 +3,14 @@
 ?>
 
 <?php
+            if(!isset($_SESSION["id"])){
+            
+                  header("location: admin_auth.php");
+                
+            }
+            ?>
+
+<?php
             if(isset($_SESSION["id"])){
                 if($user_type!='admin'){
                   header("location: admin_auth.php");
