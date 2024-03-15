@@ -20,6 +20,20 @@
 
 
 
+<?php
+  $tot_none="";
+  $get_tot_num=mysqli_query($conn, "SELECT * from chat where receiver='$email' and status='unread'");
+
+  $total_num=mysqli_num_rows($get_tot_num);
+
+  if($total_num<1){
+    $tot_none="tot_non";
+  }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +78,8 @@
                   <a href="plan.php">Plan Event</a>
                 </li>
 
-                <li>
+                <li id="chat_menu">
+                <div class="tot '.$tot_none.'" >'.$total_num.'</div>
                 <a href="chat.php">chat</a>
               </li>
               

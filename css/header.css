@@ -473,3 +473,31 @@ body{
     font-size:40px;
     font-weight:600;
   }
+
+
+
+  #chat_menu{
+    position:relative;
+  }
+
+
+  .tot{
+    width:27px;
+    height:27px;
+    border-radius: 100px;
+    background: var(--accent);
+    color:white;
+    box-shadow: var(--shadow);
+    font-weight:800;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top:-25px;
+    right:-20px;
+    position:absolute;
+  }
+
+
+  .tot_non{
+    display:none;
+  }

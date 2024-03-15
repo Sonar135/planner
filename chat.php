@@ -6,15 +6,27 @@
 
 <?php
     $planners="";
+    $none="";
     $get_planners=mysqli_query($conn, "SELECT * FROM planners where email!='$email' ");
 
     while($planner_row=mysqli_fetch_assoc($get_planners)){
         $p_name=$planner_row["name"];
         $p_email=$planner_row["email"];
 
+        $get_chat_num=mysqli_query($conn, "SELECT * from chat where sender='$p_email' and receiver='$email' and status='unread'");
 
-        $planners.='     <a href="chat.php?r='.$p_email.'"><li>
+        $num_row=mysqli_num_rows($get_chat_num);
+
+        if($num_row<1){
+            $none="none";
+        }
+
+
+
+
+        $planners.='     <a href="chat.php?r='.$p_email.'#lock"><li>
         <div class="inner">
+        <div class="num '.$none.'">'.$num_row.'</div>
             <div class="profile">
             <i class="fa-solid fa-user"></i>
             </div>
@@ -31,7 +43,7 @@
 <?php
  $r_name="";
  $r_email="";
-
+ $hash="";
  $chat="";
     $disable_text="disabled";
     if(isset($_GET["r"])){
@@ -43,7 +55,13 @@
         $r_name=$r_row["name"];
         $r_email=$r_row["email"];
 
+        $update=mysqli_query($conn, "UPDATE chat set status='seen' where sender='$recip' and receiver='$email'");
 
+        
+
+        $get_latest=mysqli_query($conn, "SELECT * from chat where (sender='$email' and receiver='$recip') or (sender='$recip' and receiver='$email') order by id desc limit 1");
+
+        $latest=mysqli_fetch_assoc($get_latest)["message"];
 
         $get_chat=mysqli_query($conn, "SELECT * from chat where (sender='$email' and receiver='$recip') or (sender='$recip' and receiver='$email')");
 
@@ -54,14 +72,22 @@
 
             $is_sender = ($chat_sender == $email) ? true : false;
 
+            if($chat_mes==$latest){
+                $hash="lock";
+            }
+
 
             if ($is_sender) {
-                $chat.= '<div class="sender">
+                $chat.= '
+                <div class="" id='.$hash.'></div>
+                <div class="sender" >
                           <div class="sending">' .$chat_mes. '</div>
                       </div>';
             } else {
-                $chat.= '<div class="receiver">
-                          <div class="receiving">' .$chat_mes. '</div>
+                $chat.= '
+                <div class="" id='.$hash.'></div>
+                <div class="receiver">
+                          <div class="receiving" >' .$chat_mes. '</div>
                       </div>';
             }
 
@@ -97,7 +123,7 @@
 
 
             if($insert){
-                header("location: chat.php?r=$recipient");
+                header("location: chat.php?r=$recipient#lock");
             }
     }
 ?>
@@ -170,16 +196,20 @@
 
 
               <form action="" method="post"> <div class="message_box">
-                    <input <?php echo $disable_text?> type="text" placeholder="message" name="message">
+                    <input <?php echo $disable_text?> type="text" placeholder="message" name="message" id="my_input">
                     <input type="text" hidden value="<?php echo $r_email?>" name="recipient">
-                    <button name="send">send</button>
+                    <button name="send" id="my_btn">send</button>
                 </div></form> 
             </div>
         </div>
+
+      
     </div>
 
     <?php
         include 'footer.php';
     ?>
 </body>
+
+
 </html>

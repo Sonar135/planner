@@ -36,6 +36,28 @@
     margin:28px 0;
     display:flex;
     padding-left:16px;
+    position:relative;
+}
+
+
+.num{
+    width:30px;
+    height:30px;
+    border-radius: 100px;
+    background: var(--accent);
+    color:white;
+    box-shadow: var(--shadow);
+    font-weight:800;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top:15px;
+    right:20px;
+    position:absolute;
+}
+
+.none{
+    display:none;
 }
 
 .profile{
