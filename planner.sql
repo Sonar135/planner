@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2024 at 11:32 AM
+-- Generation Time: Mar 15, 2024 at 02:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -71,6 +71,31 @@ INSERT INTO `admin_contact` (`id`, `sender`, `message`, `reply`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `id` int(11) NOT NULL,
+  `sender` varchar(255) DEFAULT NULL,
+  `receiver` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `message` mediumtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`id`, `sender`, `receiver`, `status`, `message`) VALUES
+(1, 'vefidi135@gmail.com', 'wilson@gmail.com', 'seen', 'lol'),
+(2, 'vefidi135@gmail.com', 'wilson@gmail.com', 'seen', 'hey'),
+(3, 'wilson@gmail.com', 'vefidi135@gmail.com', 'seen', 'yeah'),
+(4, 'wilson@gmail.com', 'vefidi135@gmail.com', 'seen', 'lol'),
+(5, 'wilson@gmail.com', 'vefidi135@gmail.com', 'seen', 'yeah');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
@@ -113,7 +138,8 @@ CREATE TABLE `planners` (
 --
 
 INSERT INTO `planners` (`id`, `name`, `email`, `password`, `phone`, `user_type`) VALUES
-(1, 'Victor Efidi okechukwu', 'vefidi135@gmail.com', '$2y$10$EC3.TrPek7cp/s7GEb5sJO2dS8/k8.NzfLWnytFOQ1.z47xdz8dFS', '08109495127', 'planner');
+(1, 'Victor Efidi ', 'vefidi135@gmail.com', '$2y$10$EC3.TrPek7cp/s7GEb5sJO2dS8/k8.NzfLWnytFOQ1.z47xdz8dFS', '08109495127', 'planner'),
+(2, 'ayoola wilson', 'wilson@gmail.com', '$2y$10$wrPRaOwBsJrhc7nk4AgUGesVSsh4p8AWs1d.FYprm4GgaYNdVSa/q', '08109495127', 'planner');
 
 -- --------------------------------------------------------
 
@@ -144,6 +170,12 @@ ALTER TABLE `admin`
 -- Indexes for table `admin_contact`
 --
 ALTER TABLE `admin_contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -181,6 +213,12 @@ ALTER TABLE `admin_contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
@@ -190,7 +228,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `planners`
 --
 ALTER TABLE `planners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
