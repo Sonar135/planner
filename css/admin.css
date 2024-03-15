@@ -18,6 +18,35 @@
     height:100%;
 }
 
+.nav_left a, .nav_right a{
+  color:var(--accent);
+}
+
+.nav_right{
+  position:relative;
+}
+
+
+.tot{
+  width:27px;
+  height:27px;
+  border-radius: 100px;
+  background: var(--accent);
+  color:white;
+  box-shadow: var(--shadow);
+  font-weight:800;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  top:7px;
+  right:200px;
+  position:absolute;
+}
+
+
+.no_num{
+  display:none;
+}
 
 .split_nav h4{
     text-align: center;

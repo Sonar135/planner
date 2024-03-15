@@ -20,6 +20,19 @@
 
 
 
+<?php
+    $no_num="";
+    $get_mess_num=mysqli_query($conn, "SELECT * from admin_contact where reply='' ");
+
+    $ad_num_row=mysqli_num_rows($get_mess_num);
+
+    if($ad_num_row<1){
+      $no_num="no_num";
+    }
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +65,8 @@
           <a href="admin.php"><h4>operations</h4></a>  
         </div>
 
-        <div class="nav_right">
+        <div class="nav_right" >
+          <div class="tot <?php echo $no_num?>"><?php echo $ad_num_row?></div>
            <a href="admin.php?messages"><h4>Messages</h4></a> 
         </div>
         </div>
